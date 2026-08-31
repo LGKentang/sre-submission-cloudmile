@@ -29,6 +29,8 @@ RUN set -eux; \
 
 USER nexus
 
+ENV INSTALL4J_ADD_VM_PARAMS="-Xms512m -Xmx768m -XX:MaxDirectMemorySize=512m -XX:MaxMetaspaceSize=256m -Djava.util.prefs.userRoot=${NEXUS_HOME}"
+
 EXPOSE 8081
 
 # entrypoint/cmd is managed from the sonatype/nexus3 base image

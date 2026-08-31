@@ -20,7 +20,7 @@ persistence:
 
 # DEPLOYMENT
 image:
-  repository: gcr.io/PROJECT_ID/nexus3-gcs
+  repository: asia-southeast2-docker.pkg.dev/metal-cable-447204-e5/nexus-images/nexus3-gcs
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -50,5 +50,5 @@ serviceAccount:
   create: true
   name: nexus-sa
   # Set via --set serviceAccount.gcpServiceAccountEmail=nexus-gcs@<PROJECT_ID>.iam.gserviceaccount.com
-  gcpServiceAccountEmail: "nexus-gcs@PROJECT_ID.iam.gserviceaccount.com"
+  gcpServiceAccountEmail: "nexus-gcs@metal-cable-447204-e5.iam.gserviceaccount.com"
 

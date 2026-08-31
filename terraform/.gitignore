@@ -1,0 +1,26 @@
+# Local .terraform directories & plugin cache
+**/.terraform/*
+
+# State files (remote GCS backend, but guard against local pulls)
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+
+# Variable files with real values
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+!terraform.tfvars.example
+
+# Plan output — embeds resolved secret values
+*.tfplan
+plan.out
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Ignore CLI configuration / credentials
+.terraformrc
+terraform.rc
