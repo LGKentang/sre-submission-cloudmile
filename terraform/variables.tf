@@ -55,3 +55,9 @@ variable "environment" {
   type        = string
   default     = "test"
 }
+
+variable "artifact_registry_repo" {
+  description = "Artifact Registry Docker repository ID"
+  type        = string
+  default     = "nexus-images"
+}

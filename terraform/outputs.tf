@@ -21,3 +21,8 @@ output "get_credentials_command" {
   description = "Command to fetch kubeconfig"
   value       = "gcloud container clusters get-credentials ${google_container_cluster.nexus.name} --zone ${var.zone} --project ${var.project_id}"
 }
+
+output "artifact_registry_repo_url" {
+  description = "Docker registry host+path to push the custom Nexus image to"
+  value       = "${var.region}-docker.pkg.dev/${var.project_id}/${google_artifact_registry_repository.nexus_images.repository_id}"
+}
