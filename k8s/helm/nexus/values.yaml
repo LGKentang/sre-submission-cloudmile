@@ -1,0 +1,16 @@
+# NAMESPACE
+createNamespace: true
+namespace: nexus
+
+# SERVICE
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8081
+
+# PERSISTENT VOLUME CLAIM
+persistence:
+  enabled: true
+  storageClassName: standard-rwo
+  accessMode: ReadWriteOnce
+  size: 10Gi
