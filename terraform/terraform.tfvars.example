@@ -1,0 +1,12 @@
+project_id      = "my-gcp-project-id"
+region          = "us-central1"
+zone            = "us-central1-a"
+cluster_name    = "nexus-cluster"
+bucket_name     = "my-gcp-project-id-nexus-blobstore"
+bucket_location = "US"
+environment     = "test"
+
+# Cost controls (already the defaults, shown here for clarity)
+node_count   = 1
+machine_type = "n1-standard-1"
+preemptible  = true

@@ -1,0 +1,9 @@
+namespace: nexus-test
+
+image:
+  tag: latest # overwritten with the commit SHA by CI, see ci/cloudbuild.yaml
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 1Gi

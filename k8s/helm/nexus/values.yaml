@@ -1,3 +1,6 @@
+nameOverride: ""
+fullnameOverride: ""
+
 # NAMESPACE
 createNamespace: true
 namespace: nexus
@@ -14,3 +17,38 @@ persistence:
   storageClassName: standard-rwo
   accessMode: ReadWriteOnce
   size: 10Gi
+
+# DEPLOYMENT
+image:
+  repository: gcr.io/PROJECT_ID/nexus3-gcs
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 1500Mi
+  limits:
+    cpu: "1"
+    memory: 2Gi
+
+probes:
+  path: /service/rest/v1/status
+  readiness:
+    initialDelaySeconds: 60
+    periodSeconds: 15
+    failureThreshold: 10
+  liveness:
+    initialDelaySeconds: 120
+    periodSeconds: 30
+    failureThreshold: 5
+
+# SERVICE ACCOUNT
+serviceAccount:
+  create: true
+  name: nexus-sa
+  # Set via --set serviceAccount.gcpServiceAccountEmail=nexus-gcs@<PROJECT_ID>.iam.gserviceaccount.com
+  gcpServiceAccountEmail: "nexus-gcs@PROJECT_ID.iam.gserviceaccount.com"
+

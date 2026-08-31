@@ -1,0 +1,7 @@
+namespace: nexus-prod
+
+image:
+  tag: latest # overwritten with a release tag by CI (this is a fallback)
+
+persistence:
+  size: 20Gi
