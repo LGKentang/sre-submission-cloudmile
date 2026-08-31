@@ -1,6 +1,8 @@
-ARG NEXUS_VERSION=3.70.1
-ARG NEXUS_IMAGE_TAG=3.70.1
-ARG GCS_PLUGIN_VERSION=0.70.0
+# check sonatype release
+# https://github.com/sonatype-nexus-community/nexus-blobstore-google-cloud/releases
+ARG NEXUS_VERSION=3.61.0
+ARG NEXUS_IMAGE_TAG=3.61.0
+ARG GCS_PLUGIN_VERSION=0.61.0
 
 FROM sonatype/nexus3:${NEXUS_IMAGE_TAG}
 ARG GCS_PLUGIN_VERSION
