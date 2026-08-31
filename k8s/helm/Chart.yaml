@@ -1,0 +1,11 @@
+apiVersion: v2
+name: nexus
+description: Sonatype Nexus3 GCS with GKE
+type: application
+version: 0.1.0
+appVersion: "3.61.0"
+keywords:
+  - nexus
+  - artifact-repository
+  - gcs
+
